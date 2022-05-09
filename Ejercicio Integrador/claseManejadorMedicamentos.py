@@ -32,4 +32,3 @@ class ManejadorMedicamentos:
             if(id==self.__lista[i].getIdCama()):
                 Lista_MedPaciente.append(self.__lista[i])
         return Lista_MedPaciente
-
