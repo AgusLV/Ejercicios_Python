@@ -2,7 +2,6 @@ from claseManejadorCamas import ManejadorCamas
 
 from claseManejadorMedicamentos import ManejadorMedicamentos
 
-
 if __name__ == '__main__':
     M_camas = ManejadorCamas()
     M_medic = ManejadorMedicamentos()
