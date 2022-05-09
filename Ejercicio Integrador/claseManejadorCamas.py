@@ -27,19 +27,31 @@ class ManejadorCamas:
         archivo = open('camas.csv')
         reader = csv.reader(archivo,delimiter=';')
         next(reader)
-
         for fila in reader:
             id = int(fila[0])
             habitacion = int(fila[1])
-            estado = fila[2]
-            NyA = fila[3]
+            estado = bool(fila[2])
+            AyN = fila[3]
             diagnostico = fila[4]
             F_Intern = fila[5]
             F_Alta = fila[6]
-            self.agregarCama(Cama(id,habitacion,estado,NyA,diagnostico,F_Intern,F_Alta))
+            self.agregarCama(Cama(id,habitacion,estado,AyN,diagnostico,F_Intern,F_Alta))
 
-    def buscaPaciente(self,id):
-        pass
+    def buscaPaciente(self,AyN):
+        paciente=None
+        i=0
+        band=False
+        while i<self.__arrCamas.size and not band:
+            if self.__arrCamas[i].getNom() == AyN:
+                band=True
+                paciente = self.__arrCamas[i]
+            else: i += 1
+        return paciente
 
     def buscaPaciente_Diagnostico(self,diagnostico):
-        pass
+        pacientes=[]
+        for i in range(self.__cantidad):
+            if self.__arrCamas[i].getEstado() == True:
+                if diagnostico == self.__arrCamas[i].getDiagnostico():
+                    pacientes.append(self.__arrCamas[i])
+        return pacientes
