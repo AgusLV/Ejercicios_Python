@@ -1,20 +1,20 @@
 class Medicamento:
-    __idCama=0
-    __idMedicamento=0
-    __nom_com=''
-    __monodroga=''
-    __presentacion=''
-    __cantidad=''
-    __precio=0.0
+    __idCama = 0
+    __idMedicamento = 0
+    __nom_com = ''
+    __monodroga = ''
+    __presentacion = ''
+    __cantidad = ''
+    __precio = 0.0
 
     def __init__(self,idCama,idMed,nom,monodroga,present,cant,precio):
-        self.__idCama=idCama
-        self.__idMedicamento=idMed
-        self.__nom_com=nom
-        self.__monodroga=monodroga
-        self.__presentacion=present
-        self.__cantidad=cant
-        self.__precio=precio
+        self.__idCama = idCama
+        self.__idMedicamento = idMed
+        self.__nom_com = nom
+        self.__monodroga = monodroga
+        self.__presentacion = present
+        self.__cantidad = cant
+        self.__precio = precio
         pass
 
     def getIdCama(self):
